@@ -3,7 +3,7 @@
     <p>
       <input type="checkbox" v-on:change="status" />
       {{todo.title}}
-      <button @click="$emit('del-todo', todo.id)">x</button>
+      <button @click="$emit('del-todo', todo.id)" class="del">x</button>
     </p>
   </div>
 </template>
@@ -22,13 +22,21 @@ export default {
 
 <style scoped>
 .todo-item {
-  background-color: gray;
+  background-color: lightgray;
   border-bottom: 1px white solid;
-  color: aliceblue;
+  color: black;
   padding: 10px;
 }
 .is-complete {
-  background-color: green;
   text-decoration: line-through;
+}
+.del {
+  width: 15px;
+  float: right;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  background: red;
+  cursor: pointer;
 }
 </style>
